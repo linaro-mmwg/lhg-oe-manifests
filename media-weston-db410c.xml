@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com"
+           review="" />
+
+  <remote  name="oe"
+           fetch="git://git.openembedded.org/"
+           review="" />
+
+  <remote  name="g.l.o-andrey.konovalov"
+           fetch="https://git.linaro.org/people/andrey.konovalov/"
+           review="" />
+
+  <!-- Qualcomm layers  -->
+  <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
+  <!-- meta-lhg -->
+  <project path="meta-lhg" remote="g.l.o-andrey.konovalov" name="meta-lhg" revision="test" />
+  <!-- meta-linaro -->
+  <project path="meta-linaro" remote="g.l.o-andrey.konovalov" name="meta-linaro" revision="lhg-lof.test" />
+  <!-- Open Embedded layers -->
+  <project path="openembedded-core" remote="oe" name="openembedded-core" revision="master" />
+  <project path="openembedded-core/bitbake" remote="oe" name="bitbake" revision="master" />
+  <project path="meta-openembedded" remote="oe" name="meta-openembedded" revision="master" />
+</manifest>
