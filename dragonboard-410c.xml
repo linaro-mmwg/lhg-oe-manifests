@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com"
+           review="" />
+
+  <remote  name="oe"
+           fetch="git://git.openembedded.org/"
+           review="" />
+
+  <!-- Qualcomm layers  -->
+  <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
+  <!-- meta-lhg -->
+  <project path="meta-lhg" remote="github" name="linaro-home/meta-lhg" revision="master" />
+  <!-- meta-linaro -->
+  <project path="meta-linaro" remote="github" name="andrey-konovalov/meta-linaro" revision="lhg-lof.jethro" />
+  <!-- UNOFFICIAL support for the GStreamer 1.0 framework -->
+  <project path="meta-gstreamer1.0" remote="github" name="dv1/meta-gstreamer1.0" revision="jethro" />
+  <!-- Open Embedded layers -->
+  <project path="openembedded-core" remote="oe" name="openembedded-core" revision="jethro" />
+  <project path="openembedded-core/bitbake" remote="oe" name="bitbake" revision="master" />
+  <project path="meta-openembedded" remote="oe" name="meta-openembedded" revision="jethro" />
+</manifest>
