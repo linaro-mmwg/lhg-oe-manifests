@@ -5,6 +5,10 @@
            fetch="https://github.com"
            review="" />
 
+  <remote  name="arago-project"
+           fetch="git://arago-project.org"
+           review="" />
+
   <remote  name="oe"
            fetch="git://git.openembedded.org/"
            review="" />
@@ -14,7 +18,7 @@
            review="" />
 
   <!-- TI layers  -->
-  <project path="meta-ti" remote="github" name="andrey-konovalov/meta-ti" revision="master" />
+  <project path="meta-ti" remote="arago-project" name="git/meta-ti.git" revision="master" />
   <!-- meta-lhg -->
   <project path="meta-lhg" remote="github" name="linaro-home/meta-lhg" revision="master" />
   <!-- meta-linaro -->
