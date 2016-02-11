@@ -5,10 +5,6 @@
            fetch="https://github.com"
            review="" />
 
-  <remote  name="oe"
-           fetch="git://git.openembedded.org/"
-           review="" />
-
   <!-- Qualcomm layers  -->
   <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
   <!-- meta-lhg -->
@@ -18,7 +14,7 @@
   <!-- UNOFFICIAL support for the GStreamer 1.0 framework -->
   <project path="meta-gstreamer1.0" remote="github" name="dv1/meta-gstreamer1.0" revision="jethro" />
   <!-- Open Embedded layers -->
-  <project path="openembedded-core" remote="oe" name="openembedded-core" revision="jethro" />
-  <project path="openembedded-core/bitbake" remote="oe" name="bitbake" revision="master" />
-  <project path="meta-openembedded" remote="oe" name="meta-openembedded" revision="jethro" />
+  <project path="openembedded-core" remote="github" name="openembedded/openembedded-core" revision="jethro" />
+  <project path="openembedded-core/bitbake" remote="github" name="openembedded/bitbake" revision="master" />
+  <project path="meta-openembedded" remote="github" name="openembedded/meta-openembedded" revision="jethro" />
 </manifest>
