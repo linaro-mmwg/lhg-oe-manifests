@@ -11,6 +11,8 @@
 
   <!-- Qualcomm layers  -->
   <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
+  <!-- LHG Chromium layer  -->
+  <project path="meta-browser" remote="github" name="linaro-home/meta-browser" revision="chromium_45" />
   <!-- meta-lhg -->
   <project path="meta-lhg" remote="github" name="linaro-home/meta-lhg" revision="master" />
   <!-- meta-linaro -->
