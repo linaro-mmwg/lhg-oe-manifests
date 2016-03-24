@@ -9,14 +9,21 @@
            fetch="https://git.linaro.org"
            review="" />
 
+  <remote  name="yoctoproject"
+           fetch="http://git.yoctoproject.org"
+           review="" />
+
+
   <!-- OpenEmbedded BSP Layer for the 96boards.org boards -->
   <project path="meta-96boards" remote="github" name="andrey-konovalov/meta-96boards" revision="master" />
   <!-- Qualcomm BSP layer -->
   <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
+  <!-- TI BSP layer  -->
+  <project path="meta-ti" remote="yoctoproject" name="git/meta-ti" revision="master" />
   <!-- LHG Chromium layer  -->
   <project path="meta-browser" remote="github" name="linaro-home/meta-browser" revision="chromium_45" />
   <!-- meta-lhg -->
-  <project path="meta-lhg" remote="github" name="andrey-konovalov/meta-lhg" revision="master" />
+  <project path="meta-lhg" remote="github" name="linaro-home/meta-lhg" revision="master" />
   <!-- meta-linaro -->
   <project path="meta-linaro" remote="linaro" name="openembedded/meta-linaro" revision="jethro" />
   <!-- meta-backports -->
