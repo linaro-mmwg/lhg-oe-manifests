@@ -24,6 +24,8 @@
   <project path="meta-browser" remote="github" name="linaro-home/meta-browser" revision="chromium_45" />
   <!-- meta-lhg -->
   <project path="meta-lhg" remote="github" name="andrey-konovalov/meta-lhg" revision="my.master" />
+  <!-- meta-security -->
+  <project path="meta-security" remote="github" name="andrey-konovalov/meta-security-unofficial" revision="my.master" />
   <!-- meta-linaro -->
   <project path="meta-linaro" remote="linaro" name="openembedded/meta-linaro" revision="jethro" />
   <!-- meta-backports -->
