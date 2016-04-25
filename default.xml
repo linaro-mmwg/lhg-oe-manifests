@@ -15,7 +15,7 @@
 
 
   <!-- OpenEmbedded BSP Layer for the 96boards.org boards -->
-  <project path="meta-96boards" remote="github" name="andrey-konovalov/meta-96boards" revision="my.master" />
+  <project path="meta-96boards" remote="github" name="andrey-konovalov/meta-96boards" revision="hikey-optee-2.0" />
   <!-- Qualcomm BSP layer -->
   <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
   <!-- TI BSP layer  -->
