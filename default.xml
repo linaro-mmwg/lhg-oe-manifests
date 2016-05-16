@@ -15,17 +15,15 @@
 
 
   <!-- OpenEmbedded BSP Layer for the 96boards.org boards -->
-  <project path="meta-96boards" remote="github" name="andrey-konovalov/meta-96boards" revision="hikey-optee-2.0" />
+  <project path="meta-96boards" remote="github" name="andrey-konovalov/meta-96boards" revision="pre-rpb" />
   <!-- Qualcomm BSP layer -->
-  <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="master" />
-  <!-- TI BSP layer  -->
-  <project path="meta-ti" remote="yoctoproject" name="git/meta-ti" revision="master" />
+  <project path="meta-qcom" remote="github" name="ndechesne/meta-qcom" revision="jethro" />
   <!-- LHG Chromium layer  -->
   <project path="meta-browser" remote="github" name="linaro-home/meta-browser" revision="chromium_45" />
   <!-- meta-lhg -->
-  <project path="meta-lhg" remote="github" name="andrey-konovalov/meta-lhg" revision="my.master" />
+  <project path="meta-lhg" remote="github" name="linaro-home/meta-lhg" revision="pre-rpb" />
   <!-- meta-security -->
-  <project path="meta-security" remote="github" name="andrey-konovalov/meta-security-unofficial" revision="my.master" />
+  <project path="meta-security" remote="github" name="andrey-konovalov/meta-security-unofficial" revision="pre-rpb" />
   <!-- meta-linaro -->
   <project path="meta-linaro" remote="linaro" name="openembedded/meta-linaro" revision="jethro" />
   <!-- meta-backports -->
