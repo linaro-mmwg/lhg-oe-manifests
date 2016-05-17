@@ -12,7 +12,7 @@ The last command might not be needed (if $HOME/bin is already in the $PATH).
 
 Download the OE data:
 ```
-$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b jethro -m default.xml
+$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b pre-rpb -m default.xml
 $ repo sync
 ```
 Before starting the build the userland Mali drivers for HiKey board must be
