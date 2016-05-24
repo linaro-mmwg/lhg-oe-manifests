@@ -28,8 +28,6 @@
   <project path="meta-linaro" remote="linaro" name="openembedded/meta-linaro" revision="jethro" />
   <!-- meta-backports -->
   <project path="meta-backports" remote="linaro" name="openembedded/meta-backports" revision="jethro" />
-  <!-- UNOFFICIAL support for the GStreamer 1.0 framework -->
-  <project path="meta-gstreamer1.0" remote="github" name="dv1/meta-gstreamer1.0" revision="jethro" />
   <!-- Open Embedded layers -->
   <project path="openembedded-core" remote="github" name="openembedded/openembedded-core" revision="jethro" />
   <project path="openembedded-core/bitbake" remote="github" name="openembedded/bitbake" revision="1.28" />
