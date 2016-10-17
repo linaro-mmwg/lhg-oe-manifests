@@ -53,6 +53,11 @@ $ MACHINE=<machine> DISTRO=<distro> bitbake <image>
 ```
 e.g. MACHINE=hikey DISTRO=rpb bitbake core-image-minimal
 
+Doing mixed 32-bit/64-bit builds
+--------------------------------
+Follow [these instructions](mixed-build.md) to build 32-bit userland with 64-bit
+kernel and kernel modules.
+
 Creating a local topic branch
 -----------------------------
 
