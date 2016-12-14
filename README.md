@@ -16,7 +16,7 @@ $ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b krogoth
+$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b morty
 ```
 When prompted, configure Repo with your real name and email address.
 
@@ -80,7 +80,7 @@ $ repo rebase
 ```
 If you find any bugs please report them here
 
-https://github.com/96boards/oe-rpb-manifest/issues
+https://github.com/linaro-home/lhg-oe-manifests/issues
 
 If you have questions or feedback, please subscribe to
 
@@ -89,6 +89,4 @@ https://lists.linaro.org/mailman/listinfo/openembedded
 Maintainers
 -------------------------
 
-* Koen Kooi <mailto:koen.kooi@linaro.org>
-* Nicolas Dechesne <nicolas.dechesne@linaro.org>
-* Fathi Boudra <mailto:fathi.boudra@linaro.org>
+* Andrey Konovalov <mailto:andrey.konovalov@linaro.org>
