@@ -23,7 +23,7 @@
   <project remote="github" name="linaro-home/meta-lhg" path="layers/meta-lhg" revision="master"/>
   <project remote="github" name="ndechesne/meta-qcom" path="layers/meta-qcom"/>
   <project remote="github" name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
-  <project remote="yocto" name="git/meta-ti" path="layers/meta-ti">
+  <project remote="yocto" name="git/meta-ti" path="layers/meta-ti" revision="ca30444d7223477c897c9b30577bfade8dfd40ef">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
   </project>
 
