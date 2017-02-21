@@ -25,6 +25,7 @@
   <project remote="github" name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
   <project remote="yocto" name="git/meta-ti" path="layers/meta-ti">
       <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
+      <linkfile dest="add2local.conf" src="../../.repo/manifests/add2local.conf"/>
   </project>
 
 
