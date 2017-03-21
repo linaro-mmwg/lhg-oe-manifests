@@ -1,9 +1,18 @@
-oe-rpb-manifest
-=================
+lhg-oe-manifests
+================
 
-OE RPB Repo manifest repository
+The lhg-oe-manifests repository contains the setup scripts for the OE RPB buildsystem (taken from OE RPB repo), along
+with a LHG specific manifest.
 
-These are the setup scripts for the OE RPB buildsystem. If you want to (re)build packages or images for OE RPB, this is the thing to use.
+The purpose of the LHG manifest is manifest is to give working LHG reference platform builds, where the integration of
+Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation
+by Linaro Home Group (LHG) members.
+
+The LHG manifest includes additional OE layers such as meta-lhg and may also override other OE layers such as meta-browser
+with LHG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems
+are also available.
+
+This repository also contains setup scripts for the OE RPB buildsystem. If you want to (re)build packages or images for OE RPB, this is the thing to use.
 The OE RPB buildsystem is using various components from the Yocto Project, most importantly the Openembedded buildsystem, the bitbake task executor and various application and BSP layers.
 
 To configure the scripts and download the build metadata, do:
@@ -51,7 +60,13 @@ DISTRO values can be:
 $ . setup-environment
 $ MACHINE=<machine> DISTRO=<distro> bitbake <image>
 ```
-e.g. MACHINE=hikey DISTRO=rpb bitbake core-image-minimal
+
+meta-lhg layer defines two new image types, lhg-westeros-wpe-image and rpb-westonchromium-image.
+
+e.g. MACHINE=hikey DISTRO=rpb-wayland bitbake rpb-westonchromium-image
+
+Will build an image for HiKey with Chromium, OP-TEE, supporting Linaro external clear key
+already integrated.
 
 Doing mixed 32-bit/64-bit builds
 --------------------------------
