@@ -16,7 +16,7 @@
   <project remote="github" name="openembedded/openembedded-core" path="layers/openembedded-core"/>
   <project remote="github" name="openembedded/meta-openembedded" path="layers/meta-openembedded"/>
   <project remote="github" name="openembedded/bitbake" path="bitbake" revision="1.34"/>
-  <project remote="github" name="OSSystems/meta-browser" path="layers/meta-browser" revision="880a7bd1d3b9a1b2003f5b0620350f03158bbd43"/>
+  <project remote="github" name="OSSystems/meta-browser" path="layers/meta-browser" revision="6edb45804c5e532fdbca31e9d358d9052eaee90b"/>
   <project remote="github" name="meta-qt5/meta-qt5" path="layers/meta-qt5"/>
   <project remote="github" name="96boards/meta-96boards" path="layers/meta-96boards"/>
   <project remote="github" name="96boards/meta-rpb" path="layers/meta-rpb"/>
