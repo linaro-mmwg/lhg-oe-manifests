@@ -19,7 +19,7 @@
   <project remote="github" name="OSSystems/meta-browser" path="layers/meta-browser" revision="6edb45804c5e532fdbca31e9d358d9052eaee90b"/>
   <project remote="github" name="meta-qt5/meta-qt5" path="layers/meta-qt5"/>
   <project remote="github" name="96boards/meta-96boards" path="layers/meta-96boards" />
-  <project remote="github" name="96boards/meta-rpb" path="layers/meta-rpb" revision="0e6a329a01ebbf0a81a63d25662e4480a54915df"/>
+  <project remote="github" name="96boards/meta-rpb" path="layers/meta-rpb"/>
   <project remote="github" name="linaro-home/meta-lhg" path="layers/meta-lhg" revision="master"/>
   <project remote="github" name="ndechesne/meta-qcom" path="layers/meta-qcom"/>
   <project remote="github" name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2"/>
