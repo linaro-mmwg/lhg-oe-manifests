@@ -134,7 +134,7 @@ Running Westeros and WPE
 Boot HiKey with HDMI out connected to the monitor, and keyboard, mouse (use USB hub) and USB-to-Ethernet adaptor connected to the USB ports. Connect the debug UART to the host and run these commands from the serial console to launch Westeros compositor:
 ```
 $ export XDG_RUNTIME_DIR=/run/user/
-$ LD_PRELOAD=/usr/lib/libwesteros_gl.so.0 westeros –renderer /usr/lib/libwesteros_render_gl.so.0 --enableCursor --display westeros-1-0 &
+$ LD_PRELOAD=/usr/lib/libwesteros_gl.so.0 westeros --renderer /usr/lib/libwesteros_render_gl.so.0 --enableCursor --display westeros-1-0 &
 ```
 After that you should see a blank screen with mouse cursor on it. The option `--enableCursor` option is to enable the mouse pointer, and the `--display <displayName>` is used to set the display name.
 
