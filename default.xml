@@ -9,10 +9,10 @@
   
   <default revision="morty" sync-j="4"/>
   
-  <project name="96boards/meta-96boards" path="layers/meta-96boards" remote="github"/>
   <project name="96boards/meta-rpb" path="layers/meta-rpb" remote="github"/>
   <project name="OSSystems/meta-browser" path="layers/meta-browser" remote="github" revision="6edb45804c5e532fdbca31e9d358d9052eaee90b"/>
   <project name="WebPlatformForEmbedded/meta-wpe" path="layers/meta-wpe" remote="github"/>
+  <project name="andrey-konovalov/meta-96boards" path="layers/meta-96boards" remote="github" revision="morty-mali450r6p001rel0"/>
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" remote="github"/>
   <project name="git/meta-ti" path="layers/meta-ti" remote="yocto"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
