@@ -20,7 +20,7 @@
   <project name="git/meta-ti" path="layers/meta-ti" remote="yocto"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
   <project name="kraj/meta-clang" path="layers/meta-clang" remote="github"/>
-  <project name="lhg/meta-lhg-prop" path="layers/meta-lhg-prop" remote="lhg-review"/>
+  <project name="lhg/meta-lhg-prop" path="layers/meta-lhg-prop" remote="lhg-review" revision="master"/>
   <project name="linaro-home/meta-lhg" path="layers/meta-lhg" remote="github"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" remote="github"/>
