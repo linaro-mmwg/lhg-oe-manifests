@@ -1,26 +1,26 @@
-# Linaro OpenEmbedded Reference Platform Build (OE RPB)
+# Linaro Home Group OpenSDK Build (LHG OE Build)
 
-The Linaro OpenEmbedded RPB project provides a reference implementation of an OpenEmbedded based distro. It contains reference images for various uses cases, such as headless systems or graphical systemd based on Xorg server or Wayland/Weston.
+Linaro Home Group OpenSDK Build is the LHG reference build, where the integration of Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation by Linaro Home Group (LHG) members.
+
+Linaro Home Group OpenSDK is based on [Linaro OpenEmbedded Reference Platform Build (OE RPB)](https://github.com/96boards/oe-rpb-manifest)
 
 ## Maintainers
 
-* Koen Kooi <mailto:koen.kooi@linaro.org>
-* Nicolas Dechesne <nicolas.dechesne@linaro.org>
-* Fathi Boudra <mailto:fathi.boudra@linaro.org>
+* Andrey Konovalov <mailto:andrey.konovalov@linaro.org>
 
 ## Support
 
 If you find any bugs please report them here
 
-https://github.com/96boards/oe-rpb-manifest/issues
+https://github.com/linaro-home/lhg-oe-manifests/issues
 
 If you have questions or feedback, please subscribe to
 
 https://lists.linaro.org/mailman/listinfo/openembedded
 
-# Using OE RPB
+# Using LHG OE Build
 
-This document provides instructions to get started with Linaro OpenEmbedded RPB project. It tries (when possible) to be generic for any board supported. The board diversity should be addressed through dedicated BSP layer then MACHINE choice.
+This document provides instructions to get started with Linaro Home Group OpenSDK. It tries (when possible) to be generic for any board supported. The board diversity should be addressed through dedicated BSP layer then MACHINE choice.
 
 ## Introduction
 
@@ -31,37 +31,32 @@ This is not an introduction on OpenEmbedded or Yocto Project. If you are not fam
 
 In this wiki, we assume that the reader is familiar with basic concepts of OpenEmbedded.
 
-## OE RPB Layers
+## LHG OE Layers
+In addition to [OE RPB Layers](https://github.com/96boards/oe-rpb-manifest/blob/rocko/README.md#oe-rpb-layers) LHG OE manifest includes public OE layers such as meta-lhg and may also override other OE layers such as meta-browser with LHG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems are available separately.
+
 
 |   Layer                 |   Description                    |
 |:-----------------------:|:----------------------|
-| oe-core | This is the main collaboration point when working on OpenEmbedded projects and is part of the core recipes. The goal of this layer is to have just enough recipes to build a basic system, this means keeping it as small as possible. |
-| meta-rpb  |   This is a very small layer where the distro configurations live. Currently it houses both Reference Platform Build and Wayland Reference Platform Builds. |
-| meta-oe | This layer houses many useful, but sometimes unmaintained recipes. Since the reduction in recipes to the core, meta-oe was created for everything else. There are currently approximately 650 recipes in this layer. |
-| meta-browser | This layer holds the recipes for Firefox and Chromium. Both recipes require a lot of maintenance, because of this a seperate layer was created. |
-| meta-qt5 | This is a cross-platform toolkit. |
-| meta-linaro | This layer is used to get the Linaro toolchain. |
-| meta-backports | Backport newer versions into the build which were not part of the release. |
-| meta-96boards | This support layer is managed by Linaro and intended for boards that do not have their own board support layer. Currently used for the HiKey Consumer Edition board, and eventually the Bubblegum-96 board. If a vendor does not support their own layer, it can be added to this layer. |
-| meta-qcom | This is the board support layer for Qualcomm boards. Currently supports IFC6410 and the DragonBoard 410c. |
-| meta-st-cannes2 | This is the board support layer for ST B2260 board. |
+| meta-lhg | LHG components, the sample Wayland Weston image recipe included |
+| meta-lhg-integration | Third party recipes, and the changes to integrate them into LHG OE build |
+| meta-wpe | lhg-westeros-wpe-image, and wpewebkit integration changes |
 
-## oe-rpb-manifest repository
+## lhg-oe-manifests repository
 
 These are the setup scripts for the OE RPB buildsystem. If you want to (re)build packages or images for OE RPB, this is the thing to use.
 The OE RPB buildsystem is using various components from the Yocto Project, most importantly the Openembedded buildsystem, the bitbake task executor and various application and BSP layers.
 
 To configure the scripts and download the build metadata, do:
 ```
-mkdir ~/bin
-PATH=~/bin:$PATH
+$ mkdir ~/bin
+$ PATH=~/bin:$PATH
 
-curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
+$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+$ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-repo init -u https://github.com/96boards/oe-rpb-manifest.git -b master
+$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b rocko
 ```
 When prompted, configure Repo with your real name and email address.
 
@@ -69,17 +64,17 @@ A successful initialization will end with a message stating that Repo is initial
 
 To pull down the metadata sources to your working directory from the repositories as specified in the default manifest, run
 ```
-repo sync
+$ repo sync
 ```
 When downloading from behind a proxy (which is common in some corporate environments), it might be necessary to explicitly specify the proxy that is then used by repo:
 ```
-export HTTP_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
-export HTTPS_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
+$ export HTTP_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
+$ export HTTPS_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
 ```
 More rarely, Linux clients experience connectivity issues, getting stuck in the middle of downloads (typically during "Receiving objects"). It has been reported that tweaking the settings of the TCP/IP stack and using non-parallel commands can improve the situation. You need root access to modify the TCP setting:
 ```
-sudo sysctl -w net.ipv4.tcp_window_scaling=0
-repo sync -j1
+$ sudo sysctl -w net.ipv4.tcp_window_scaling=0
+$ repo sync -j1
 ```
 
 ## Host package Dependencies
@@ -120,67 +115,41 @@ All required dependencies should now be installed on your host environment, you 
 It is recommended to use the `setup-environment` script. Among several things, it will prompt the user for the list of supported machines and distros. The setup script will also create (if they don't exsist) the local build configuration files.
 
 To run the setup script:
-
-    $ . setup-environment
+```
+$ . setup-environment
+```
 
 And follow the instructions. If you already know the value for MACHINE and DISTRO, it is possible to set them as environment variables, e.g. 
-
-    $ MACHINE=dragonboard-410c DISTRO=rpb source setup-environment
-
-## Build a minimal, console-only image
-
-To build a console image, you can run:
-
-    $ bitbake rpb-console-image
-
-At the end of the build, your build artifacts will be found under `tmp-eglibc/deploy/images/MACHINE/`. The two main build artifacts you will use to update your board are:
-* `rpb-console-image-<MACHINE>.ext4.gz` and
-* `boot-<MACHINE>.img`
-
-## Build a simple X11 image
-
-To build an X11 image with GPU hardware accelerated support, run:
-
-    $ bitbake rpb-desktop-image
-
-This image includes a few additional features, such as `systemd`, `networkmanager` which makes it simpler to use. At the end of the build, the root file system image will be available as `tmp-eglibc/deploy/images/<MACHINE>/rpb-desktop-image-<MACHINE>.ext4.gz`.
-
-Then you can finally start the X server, and run any graphical application:
-
-    X&
-    export DISPLAY=:0
-    glxgears
-
-The default X11 image includes `openbox` window manager, and it should automatically start on boot. If you want to stop (or restart) the window manager, you can use the following command:
-
-    $ systemctl stop xserver-nodm.service
-    $ systemctl start xserver-nodm.service
-    
-Of course, you can easily add another window manager, such as `metacity` in the image. To install `metacity` in the image, add the following to `conf/auto.conf` file:
-
-    CORE_IMAGE_EXTRA_INSTALL += "metacity"
-
-and rebuild the `rpb-desktop-image` image, it will now include `metacity`.
+```
+$ MACHINE=dragonboard-410c DISTRO=rpb-wayland source setup-environment
+```
 
 ## Build a sample Wayland/Weston image
 
-For Wayland/weston, it is needed to change the DISTRO and use `rpb-wayland` instead of `rpb`. The main reason is that in the `rpb-wayland` distro, the support for X11 is completely removed. So, in a new terminal prompt, setup a new environment and make sure to use `rpb-wayland` for DISTRO, then, you can run a sample image with:
+For Wayland/Weston, it is needed to select `rpb-wayland` for the DISTRO when running setup-environment. Then you can run a sample image with:
+```
+$ bitbake rpb-westonchromium-image
+```
 
-    $ bitbake rpb-weston-image
+The MACHINE and DISTRO can also be overriden in the command line. E.g.:
+```
+$ MACHINE=hikey DISTRO=rpb-wayland bitbake rpb-westonchromium-image
+````
 
-This image includes a few additional features, such as `systemd`, `networkmanager` which makes it simpler to use. Once built, the image will be available at `tmp-eglibc/deploy/images/<MACHINE>/rpb-weston-image-<MACHINE>.ext4.gz`. 
+Will build an image for HiKey with Chromium, OP-TEE, and Linaro external ClearKey CDM support.
 
-If you boot this image on the board, you should get a command prompt on the HDMI monitor. A user called `linaro` exists (and has no password). Once logged in a VT, you run start weston with:
+If you boot this image on the board, it should get you to the Weston desktop shell.
 
-    weston-launch
+## Doing mixed 32-bit/64-bit builds
 
-And that should get you to the Weston desktop shell.
+Follow [these instructions](mixed-build.md) to build 32-bit userland with 64-bit
+kernel and kernel modules.
 
 ## Creating a local topic branch
 
 If you need to create local branches for all repos which then can be done e.g.
 ```
-~/bin/repo start myangstrom --all
+$ ~/bin/repo start myangstrom --all
 ```
 Where 'myangstrom' is the name of branch you choose
 
@@ -188,11 +157,11 @@ Where 'myangstrom' is the name of branch you choose
 
 If you need to bring changes from upstream then use following commands
 ```
-repo sync
+$ repo sync
 ```
 Rebase your local committed changes
 ```
-repo rebase
+$ repo rebase
 ```
 
 ## Guidelines / tips
@@ -203,11 +172,11 @@ When using the OpenEmbedded build, you are building the entire GNU Linux system 
 
 The OE RPB setup scripts expects the `downloads` and `sstate-cache` folders to be located at the root of your build environment. When initializing a second build environment, and before started any build, you can simply use Linux symlinks to share these folders. 
 
-Assuming you have already create a workspace in `$HOME/oe-rpb`, and that you are making another one in `$HOME/oe-rpb2`, then you can run the following commands:
+Assuming you have already create a workspace in `$HOME/lhg-oe-build`, and that you are making another one in `$HOME/lhg-oe-build2`, then you can run the following commands:
 
-    cd $HOME/oe-rpb2
-    ln -s $HOME/oe-rpb/downloads
-    ln -s $HOME/oe-rpb/sstate-cache
+    cd $HOME/lhg-oe-build2
+    ln -s $HOME/lhg-oe-build/downloads
+    ln -s $HOME/lhg-oe-build/sstate-cache
 
 It is safe to use such a setup, and OpenEmbedded will work fine!
 
