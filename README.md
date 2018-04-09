@@ -12,7 +12,7 @@ Multimedia Working Group OpenSDK is based on [Linaro OpenEmbedded Reference Plat
 
 If you find any bugs please report them here
 
-https://github.com/linaro-home/lhg-oe-manifests/issues
+https://github.com/linaro-mmwg/lhg-oe-manifests/issues
 
 If you have questions or feedback, please subscribe to
 
@@ -56,7 +56,7 @@ $ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b rocko
+$ repo init -u https://github.com/linaro-mmwg/lhg-oe-manifests.git -b rocko/playready
 ```
 When prompted, configure Repo with your real name and email address.
 
@@ -133,15 +133,51 @@ $ bitbake rpb-westonchromium-image
 
 The MACHINE and DISTRO can also be overriden in the command line. E.g.:
 ```
-$ MACHINE=hikey DISTRO=rpb-wayland bitbake rpb-westonchromium-image
-````
+MACHINE=hikey DISTRO=rpb-wayland bitbake rpb-westonchromium-image
+```
 
-Will build an image for HiKey with Chromium, OP-TEE, and Linaro external ClearKey CDM support.
+Will build an image for HiKey with Chromium, OP-TEE, supporting Playready DRM
+already integrated.
 
-If you boot this image on the board, it should get you to the Weston desktop shell.
+The integration is achieved through the meta-lhg-prop layer which adds various bbapends
+and extra recipes for the Playready drm support.
 
-## Doing mixed 32-bit/64-bit builds
+Flashing Instructions for HiKey
+-------------------------------
+Follow [this link](https://github.com/96boards/documentation/wiki/HiKeyUEFI#flash-binaries-to-emmc-) for standard flashing procedure.
 
+If switching between Android & OE builds remember to flash the new partition table.
+Also it is strongly advised to always flash fip.bin (which contains OP-TEE OS & ATF)
+to ensure the OP-TEE os is the correct version.
+
+Running Chromium with OpenCDM & Playready TA
+--------------------------------------------
+
+On the target use the following commands to start the cdmiservice and run Chromium
+with OpenCDM plugin enabled.
+
+```
+$ su
+$ rpcbind
+$ chmod 666 /dev/te*
+$ cd /usr/share/playready
+$ cdmiservice &
+$ /usr/bin/chromium/chrome --no-sandbox --use-gl=egl --ozone-platform=wayland --no-sandbox --composite-to-mailbox --in-process-gpu --enable-low-end-device-mode --start-maximized --user-data-dir=data_dir --blink-platform-log-channels=Media --register-pepper-plugins="/usr/lib64/chromium/libopencdmadapter.so#ClearKey CDM#ClearKey CDM0.1.0.0#0.1.0.0;application/x-ppapi-open-cdm" http://people.linaro.org/~peter.griffin/dash.js/samples/dash-if-reference-player/index.html
+```
+
+Using the dash.js client select one of the bottom two clips from "Microsoft Test Content" section.
+
+Notes
+-----
+
+1. Ensure cdmiservice is run from /usr/share/playready directory (required so it finds certifcates).
+2. Ensure path to libopencdmadapter.so is correct.
+3. Ensure TA is present under /lib/optee_armtz/82dbae9c-9ce0-47e0-a1cb4048cfdb84aa.ta
+3. For further debugging enable logging in opencdm plugin and cdmiservice.
+
+
+Doing mixed 32-bit/64-bit builds
+--------------------------------
 Follow [these instructions](mixed-build.md) to build 32-bit userland with 64-bit
 kernel and kernel modules.
 
