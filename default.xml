@@ -11,7 +11,7 @@
   
   <project name="96boards/meta-rpb" path="layers/meta-rpb" remote="github"/>
   <project name="OSSystems/meta-browser" path="layers/meta-browser" remote="github" revision="6edb45804c5e532fdbca31e9d358d9052eaee90b"/>
-  <project name="WebPlatformForEmbedded/meta-wpe" path="layers/meta-wpe" remote="github" revision="d275a751d0c9b3e73258d90ada19ffe3732aae18"/>
+  <project name="WebPlatformForEmbedded/meta-wpe" path="layers/meta-wpe" remote="github" revision="1d712bb6e557411bdd3e358b5d9098cff7df15b7"/>
   <project name="andrey-konovalov/meta-96boards" path="layers/meta-96boards" remote="github" revision="morty-mali450r6p001rel0"/>
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" remote="github"/>
   <project name="git/meta-ti" path="layers/meta-ti" remote="yocto"/>
