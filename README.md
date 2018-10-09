@@ -2,14 +2,14 @@ lhg-oe-manifests
 ================
 
 The lhg-oe-manifests repository contains the setup scripts for the OE RPB buildsystem (taken from OE RPB repo), along
-with a LHG specific manifest.
+with a MMWG specific manifest.
 
-The purpose of the LHG manifest is manifest is to give working LHG reference platform builds, where the integration of
+The purpose of the MMWG manifest is manifest is to give working MMWG reference platform builds, where the integration of
 Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation
-by Linaro Home Group (LHG) members.
+by Multimedia Working Group (MMWG) members.
 
-The LHG manifest includes additional OE layers such as meta-lhg and may also override other OE layers such as meta-browser
-with LHG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems
+The MMWG manifest includes additional OE layers such as meta-lhg and may also override other OE layers such as meta-browser
+with MMWG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems
 are also available.
 
 This repository also contains setup scripts for the OE RPB buildsystem. If you want to (re)build packages or images for OE RPB, this is the thing to use.
@@ -25,7 +25,7 @@ $ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-$ repo init -u https://github.com/linaro-home/lhg-oe-manifests.git -b morty
+$ repo init -u https://github.com/linaro-mmwg/lhg-oe-manifests.git -b morty
 ```
 When prompted, configure Repo with your real name and email address.
 
