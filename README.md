@@ -1,8 +1,8 @@
-# Linaro Home Group OpenSDK Build (LHG OE Build)
+# Multimedia Working Group OpenSDK Build (MMWG OE Build)
 
-Linaro Home Group OpenSDK Build is the LHG reference build, where the integration of Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation by Linaro Home Group (LHG) members.
+Multimedia Working Group OpenSDK Build is the MMWG reference build, where the integration of Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation by MWMG members.
 
-Linaro Home Group OpenSDK is based on [Linaro OpenEmbedded Reference Platform Build (OE RPB)](https://github.com/96boards/oe-rpb-manifest)
+Multimedia Working Group OpenSDK is based on [Linaro OpenEmbedded Reference Platform Build (OE RPB)](https://github.com/96boards/oe-rpb-manifest)
 
 ## Maintainers
 
@@ -18,9 +18,9 @@ If you have questions or feedback, please subscribe to
 
 https://lists.linaro.org/mailman/listinfo/openembedded
 
-# Using LHG OE Build
+# Using MMWG OE Build
 
-This document provides instructions to get started with Linaro Home Group OpenSDK. It tries (when possible) to be generic for any board supported. The board diversity should be addressed through dedicated BSP layer then MACHINE choice.
+This document provides instructions to get started with Multimedia Working Group OpenSDK. It tries (when possible) to be generic for any board supported. The board diversity should be addressed through dedicated BSP layer then MACHINE choice.
 
 ## Introduction
 
@@ -31,14 +31,14 @@ This is not an introduction on OpenEmbedded or Yocto Project. If you are not fam
 
 In this wiki, we assume that the reader is familiar with basic concepts of OpenEmbedded.
 
-## LHG OE Layers
-In addition to [OE RPB Layers](https://github.com/96boards/oe-rpb-manifest/blob/rocko/README.md#oe-rpb-layers) LHG OE manifest includes public OE layers such as meta-lhg and may also override other OE layers such as meta-browser with LHG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems are available separately.
+## MMWG OE Layers
+In addition to [OE RPB Layers](https://github.com/96boards/oe-rpb-manifest/blob/rocko/README.md#oe-rpb-layers) MMWG OE manifest includes public OE layers such as meta-lhg and may also override other OE layers such as meta-browser with MMWG specific branches where integration has already been done. Other OE layers containing proprietary DRM systems are available separately.
 
 
 |   Layer                 |   Description                    |
 |:-----------------------:|:----------------------|
-| meta-lhg | LHG components, the sample Wayland Weston image recipe included |
-| meta-lhg-integration | Third party recipes, and the changes to integrate them into LHG OE build |
+| meta-lhg | MMWG components, the sample Wayland Weston image recipe included |
+| meta-lhg-integration | Third party recipes, and the changes to integrate them into MMWG OE build |
 | meta-wpe | lhg-westeros-wpe-image, and wpewebkit integration changes |
 
 ## lhg-oe-manifests repository
