@@ -18,6 +18,7 @@
   </project>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
   <project name="kraj/meta-clang" path="layers/meta-clang" remote="github" revision="master"/>
+  <project name="linaro-mmwg/meta-freescale" path="layers/meta-freescale" remote="github" revision="mmwg-master"/>
   <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
   <project name="meta-rust/meta-rust" path="layers/meta-rust" remote="github" revision="master"/>
