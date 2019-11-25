@@ -12,6 +12,7 @@
   <project name="96boards/meta-96boards" path="layers/meta-96boards" remote="github" revision="master"/>
   <project name="96boards/meta-rpb" path="layers/meta-rpb" remote="github" revision="master"/>
   <project name="OSSystems/meta-browser" path="layers/meta-browser" remote="github" revision="master"/>
+  <project name="petegriffin/meta-wpe" path="layers/meta-wpe" remote="github" revision="87e8d48cdbc82b8cac5e47afc5143aca1fb10ffb"/>
   <project name="Freescale/meta-freescale" path="layers/meta-freescale" remote="github"/>
   <project name="git/meta-intel" path="layers/meta-intel" remote="yocto"/>
   <project name="git/meta-ti" path="layers/meta-ti" remote="yocto" revision="master">
