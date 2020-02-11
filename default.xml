@@ -15,14 +15,15 @@
   <project name="cpriouzeau/meta-st-cannes2" path="layers/meta-st-cannes2" remote="github"/>
   <project name="git/meta-ti" path="layers/meta-ti" remote="yocto"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
-  <project name="linaro-home/meta-lhg" path="layers/meta-lhg" remote="github"/>
+  <project name="linaro-mmwg/lhg-oe-manifests" path="conf" remote="github">
+    <linkfile dest="setup-environment" src="setup-environment-internal"/>
+  </project>
+  <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" remote="github"/>
   <project name="openembedded/bitbake" path="bitbake" remote="github" revision="1.32"/>
   <project name="openembedded/meta-backports" path="layers/meta-backports" remote="linaro"/>
   <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro"/>
   <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" remote="github"/>
-  <project name="openembedded/openembedded-core" path="layers/openembedded-core" remote="github">
-    <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
-  </project>
+  <project name="openembedded/openembedded-core" path="layers/openembedded-core" remote="github"/>
 </manifest>
