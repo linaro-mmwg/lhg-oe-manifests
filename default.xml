@@ -13,11 +13,12 @@
   <project name="96boards/meta-rpb" path="layers/meta-rpb" remote="github"/>
   <project name="OSSystems/meta-browser" path="layers/meta-browser" remote="github" revision="master"/>
   <project name="git/meta-intel" path="layers/meta-intel" remote="yocto"/>
-  <project name="git/meta-ti" path="layers/meta-ti" remote="yocto">
-    <linkfile dest="setup-environment" src="../../.repo/manifests/setup-environment"/>
-  </project>
+  <project name="git/meta-ti" path="layers/meta-ti" remote="yocto"/>
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
   <project name="kraj/meta-clang" path="layers/meta-clang" remote="github"/>
+  <project name="linaro-mmwg/lhg-oe-manifests" path="conf" remote="github">
+    <linkfile dest="setup-environment" src="setup-environment-internal"/>
+  </project>
   <project name="linaro-mmwg/meta-freescale" path="layers/meta-freescale" remote="github" revision="mmwg-master"/>
   <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
