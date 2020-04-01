@@ -6,7 +6,8 @@
   <remote fetch="git://git.openembedded.org" name="oe"/>
   <remote fetch="http://git.shr-project.org" name="shr"/>
   <remote fetch="http://git.yoctoproject.org" name="yocto"/>
-  
+  <remote fetch="ssh://lhg-review.linaro.org:29418" name="lhg-review"/>
+
   <default revision="zeus" sync-j="4"/>
   
   <project name="96boards/meta-96boards" path="layers/meta-96boards" remote="github"/>
@@ -19,10 +20,11 @@
   <project name="git/meta-virtualization" path="layers/meta-virtualization" remote="yocto"/>
   <project name="flihp/meta-measured" path="layers/meta-measured" remote="github" revision="master"/>
   <project name="kraj/meta-clang" path="layers/meta-clang" remote="github"/>
-  <project name="linaro-mmwg/lhg-oe-manifests" path="conf" remote="github">
+  <project name="linaro-mmwg/lhg-oe-manifests" path="conf" remote="github" revision="drm/zeus">
     <linkfile dest="setup-environment" src="setup-environment-internal"/>
   </project>
   <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github" revision="master"/>
+  <project name="lhg/meta-lhg-prop" path="layers/meta-lhg/meta-lhg-prop" remote="lhg-review" revision="master"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
   <project name="meta-rust/meta-rust" path="layers/meta-rust" remote="github" revision="master"/>
   <project name="ndechesne/meta-qcom" path="layers/meta-qcom" remote="github"/>
