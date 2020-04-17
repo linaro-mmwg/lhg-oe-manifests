@@ -32,5 +32,5 @@
   <project name="openembedded/meta-linaro" path="layers/meta-linaro" remote="linaro" revision="master"/>
   <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" remote="github"/>
   <project name="openembedded/openembedded-core" path="layers/openembedded-core" remote="github"/>
-  <project name="petegriffin/meta-wpe" path="layers/meta-wpe" remote="github" revision="54231d6ed6787c539334bfb759fb0aadc27866d8"/>
+  <project name="petegriffin/meta-wpe" path="layers/meta-wpe" remote="github"/>
 </manifest>
