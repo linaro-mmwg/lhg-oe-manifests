@@ -32,5 +32,6 @@
   <project name="openembedded/meta-openembedded" path="layers/meta-openembedded" remote="github"/>
   <project name="openembedded/openembedded-core" path="layers/openembedded-core" remote="github"/>
   <project name="meta-python2" path="layers/meta-python2" remote="oe"/>
+  <project name="git/meta-arm" path="layers/meta-arm" remote="yocto"/>
   <project name="petegriffin/meta-wpe" path="layers/meta-wpe" remote="github" revision="54231d6ed6787c539334bfb759fb0aadc27866d8"/>
 </manifest>
