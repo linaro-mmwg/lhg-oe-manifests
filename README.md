@@ -1,12 +1,13 @@
 # Multimedia Working Group OpenSDK Build (MMWG OE Build)
 
-Multimedia Working Group OpenSDK Build is the MMWG reference build, where the integration of Chromium, OP-TEE and DRM has already been done and validated. This can then be used as a baseline reference implementation by MWMG members.
+Multimedia Working Group OpenSDK Build is the MMWG reference build, where the integration of wpewebkit, OP-TEE and DRM components has already been validated. This can then be used as a baseline reference implementation by MWMG Linaro members.
 
 Multimedia Working Group OpenSDK is based on [Linaro OpenEmbedded Reference Platform Build (OE RPB)](https://github.com/96boards/oe-rpb-manifest)
 
 ## Maintainers
 
 * Andrey Konovalov <mailto:andrey.konovalov@linaro.org>
+* Peter Griffin <mailto:peter.griffin@linaro.org>
 
 ## Support
 
@@ -56,7 +57,7 @@ $ chmod a+x ~/bin/repo
 ```
 Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory. To check out the current branch, specify it with -b:
 ```
-$ repo init -u https://github.com/linaro-mmwg/lhg-oe-manifests.git -b dunfell
+$ repo init -u https://github.com/linaro-mmwg/lhg-oe-manifests.git -b drm/dunfell
 ```
 When prompted, configure Repo with your real name and email address.
 
@@ -124,19 +125,24 @@ And follow the instructions. If you already know the value for MACHINE and DISTR
 $ MACHINE=dragonboard-410c DISTRO=rpb-wayland source setup-environment
 ```
 
-## Build a sample Wayland/Weston image
+## Build a sample Wayland image with wpewebkit and opencdm
 
-For Wayland/Weston, it is needed to select `rpb-wayland` for the DISTRO when running setup-environment. Then you can run a sample image with:
+
+For Wayland image, it is needed to select `rpb-wayland` for the DISTRO when running setup-environment. Then you can run a sample image with:
 ```
-$ bitbake rpb-westonchromium-image
+$ bitbake lhg-westeros-wpe-image
 ```
+
+By default this image will includ RDK Westeros wayland compositor,
+Weston wayland compositor, wpewebkit browser, opencdm, OP-TEE and
+Widevine/ Playready DRM components.
 
 The MACHINE and DISTRO can also be overriden in the command line. E.g.:
 ```
-$ MACHINE=hikey DISTRO=rpb-wayland bitbake rpb-westonchromium-image
+$ MACHINE=imx8mqevk DISTRO=rpb-wayland bitbake lhg-westeros-wpe-image
 ````
 
-Will build an image for HiKey with Chromium, OP-TEE, and Linaro external ClearKey CDM support.
+Will build an image for imx8mqevk with wpewebkit, OP-TEE, and OpenCDM.
 
 If you boot this image on the board, it should get you to the Weston desktop shell.
 
