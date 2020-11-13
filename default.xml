@@ -23,7 +23,7 @@
   <project name="linaro-mmwg/lhg-oe-manifests" path="conf" remote="github">
     <linkfile dest="setup-environment" src="setup-environment-internal"/>
   </project>
-  <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github" revision="master"/>
+  <project name="linaro-mmwg/meta-lhg" path="layers/meta-lhg" remote="github"/>
   <project name="meta-python2" path="layers/meta-python2" remote="oe"/>
   <project name="meta-qt5/meta-qt5" path="layers/meta-qt5" remote="github"/>
   <project name="meta-rust/meta-rust" path="layers/meta-rust" remote="github" revision="master"/>
